@@ -117,7 +117,19 @@ body {
   font-family: 'Courier New', monospace;
   margin-left:1em;
 }
+@media (max-width: 767px) {
+  img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+  }
+}
 
+@media (min-width: 768px) {
+  img {
+    width: 50%; /* Example: Make image smaller on larger screens */
+    height: auto;
+  }
+}
 /* Multi-Line Animated Border */
 #story {
   border: double 4px #2e8b57;
@@ -210,18 +222,14 @@ a:hover, .button:hover {
 
 </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="50,25" size="100,100">//&lt;&lt;set $assets to &quot;&quot;&gt;&gt;
 &lt;&lt;set $assets to &quot;./&quot;&gt;&gt;
-if(window.innerWidth>=726px) {
 &lt;&lt;set $width to window.innerWidth*0.5&gt;&gt;
 &lt;&lt;set $height to window.innerHeight*0.8&gt;&gt;}
-else {
-&lt;&lt;set $width to window.innerWidth*0.8&gt;&gt;
-&lt;&lt;set $height to window.innerHeight*0.3&gt;&gt;}
-endif
+	
 //&lt;&lt;cacheaudio &quot;audioId&quot; &quot;D:/Art_projects/Jaaga_AI_futures_fellow/magnum/game_assets_final/aud_malhaar.mp4&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;audioId&quot; &quot;./aud_malhaar.mp4&quot;&gt;&gt;
 Rain arrives in torrents, flooding streets and memories alike. 
 
-&lt;img @src=&quot;$assets + &#39;title.png&#39; &quot; @width=$width @height=$height&gt;
+&lt;img @src=&quot;$assets + &#39;title.png&#39; &quot; &gt;
 
 Once, you three dreamed of rain together—chasing monsoons, mapping storm drains, coding the clouds. Rain is no longer just water. It’s ambition. It’s memory. It’s love.  
 
